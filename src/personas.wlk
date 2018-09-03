@@ -1,26 +1,23 @@
 object olivia {
 
-	var property concentracion = 6
+	var property gradoDeConcentracion = 6
 
-	method gradoDeConcentracion() {
-		return concentracion
-	}
 
 	method teAtendieron() {
-		concentracion += 3
+		gradoDeConcentracion += 3
 	}
 
 	method discutir() {
-		concentracion -= 1
+		gradoDeConcentracion -= 1
 	}
 
 }
 
 object bruno {
 
-	var property esFeliz = true
-	var property tieneSed = false
-	var property peso = 55000
+	var esFeliz = true
+	var tieneSed = false
+	var peso = 55000
 
 	method esFeliz() {
 		return esFeliz
@@ -80,8 +77,8 @@ object bruno {
 
 object ramiro {
 
-	var property contractura = 0
-	var property pielGrasosa = false
+	var contractura = 0
+	var pielGrasosa = false
 	
 	method recibirMasajes() {
 		if (contractura > 2) {
