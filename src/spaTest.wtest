@@ -1,0 +1,79 @@
+import spa.*
+import personas.*
+
+/*
+ * olivia inicia su grado de concentracion en 6 en todos los tests.
+ * 
+ * la contractura de ramiro arranca en 0 y no tiene piel grasosa.
+ * 
+ * bruno arranca feliz, sin sed y con 55000 de peso
+ */
+test "olivia va al spa" {
+//el grado de concentracion de olivia debe quedar en 9
+	spa.atender(olivia)
+	assert.equals(olivia.gradoDeConcentracion(),9)
+
+}
+
+test "olivia discute"{
+//el grado de concentracion de olivia debe quedar en 5
+	olivia.discutir()
+	assert.equals(olivia.gradoDeConcentracion(),5)
+}
+test "olivia va al spa dos veces seguidas"{
+	//el grado de concentracion de olivia debe quedar en 15
+	spa.atender(olivia)
+	spa.atender(olivia)
+	assert.equals(olivia.gradoDeConcentracion(),15)
+	//
+}
+
+test "ramiro va al spa"{
+	//la contractura queda en 0 y la piel no esta grasosa
+	spa.atender(ramiro)
+	assert.equals(ramiro.pielGrasosa(),false)
+	assert.equals(ramiro.contractura(),0)
+	
+}
+
+test "ramiro labura un dia"{
+	//la contractura de ramiro queda en 2 y la piel queda grasosa
+	ramiro.diaDeTrabajo()
+	assert.equals(ramiro.contractura(),2)
+	assert.equals(ramiro.pielGrasosa(),true)
+}
+
+test "ramiro labura un dia y va al spa"{
+	//la contractura de ramiro queda en 0  y la piel no queda grasosa
+	ramiro.diaDeTrabajo()
+	spa.atender(ramiro)
+	assert.equals(ramiro.contractura(),0)
+	assert.equals(ramiro.pielGrasosa(),false)
+}
+
+test "ramiro labura un dia, juega al paddle y despues va al spa"{
+	//la contractura queda en 3 y la piel no queda grasosa
+	ramiro.diaDeTrabajo()
+	ramiro.jugarAlPaddle()
+	spa.atender(ramiro)
+	assert.equals(ramiro.contractura(),3)
+	assert.equals(ramiro.pielGrasosa(),false)
+	
+}
+
+test "bruno va al spa"{
+	//bruno queda feliz y con 54500 de peso
+	spa.atender(bruno)
+	assert.equals(bruno.peso(),54500)
+	assert.equals(bruno.esFeliz(),true)
+}
+
+test "bruno va al spa dos veces seguidas"{
+	//bruno queda feliz y con 53500 de peso
+	spa.atender(bruno)
+	spa.atender(bruno)
+	assert.equals(bruno.peso(),54000)
+	assert.equals(bruno.esFeliz(),true)
+}
+
+

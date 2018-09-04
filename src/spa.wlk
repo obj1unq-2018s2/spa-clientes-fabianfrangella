@@ -6,8 +6,12 @@ object spa {
 
 	method atender(persona) {
 		if (mejorCliente == persona) {
-			persona.teAtendieron()
-			persona.teAtendieron()
+			persona.recibirMasajes()
+			persona.recibirMasajes()
+			persona.darseUnBanioDeVapor()
+		}else{
+			persona.recibirMasajes()
+			persona.darseUnBanioDeVapor()
 		}
 			// hay que hacer que la persona reciba masajes y se dé un baño de vapor
 			// despues, agregar el premio para el que vuelve enseguida
